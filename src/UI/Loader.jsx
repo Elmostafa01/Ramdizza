@@ -1,5 +1,5 @@
 const Loader = () => {
-  return <span class="loader"></span>
+  return <span class="spinner"></span>
 }
 
 export default Loader
