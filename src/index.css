@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Nunito+Sans:opsz,wght@6..12,600&family=Rubik:wght@600&display=swap');
 /* body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -19,15 +18,15 @@
 } */
 
 body {
-  background: #ffffff;
+  background: #fafafa;
   overflow: hidden;
 }
 
 .home {
   height: 100dvh;
   width: 100vw;
-  overflow-x: hidden;
   background: #ffc244;
+  overflow-x: hidden;
   background-position: center;
   background-repeat: no-repeat;
   margin: 0 auto;
@@ -47,6 +46,15 @@ body {
 .svg {
   position: absolute;
   bottom: 0;
+}
+.pizza-number  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  font-size: .8em;
+  padding: 0 5px;
 }
 
 @keyframes pizza {
@@ -80,6 +88,9 @@ body {
   }
 }
  
+.cart-down,.cart-up {
+  font-family: 'Kdam Thmor Pro', sans-serif;
+}
 
 .spinner {
   width: 56px;

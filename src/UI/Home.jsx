@@ -15,7 +15,7 @@ function Home() {
           </div>
           <div className='flex flex-col items-center justify-center gap-4 w-64'>
             <p className='text-emerald-600 [text-shadow:_0_1px_14px_rgb(0_0_0_/_20%) text-xl text-center'>Welcome! Please start by telling us your name </p>
-            <div className='hero-input relative block w-96 h-12'>
+            <div className='hero-input sm:w-96 relative block  h-12'>
               <input
               className='w-full h-full rounded-lg pl-16 focus:outline-none
               focus:ring focus:border-emerald-400  overflow-hidden'
