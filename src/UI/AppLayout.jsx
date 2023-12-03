@@ -8,13 +8,14 @@ const AppLayout = () => {
   const isLoading = navigation.state === "loading";
 
   return (
-    <div className='layout flex flex-col items-center justify-center'>
+    <div className='flex items-center justify-center h-[100vh]'>
       {isLoading && <Loader />}
       <Header />
-      <main>
-        <Outlet />
-      </main>
-      
+      <div>
+        <main className='max-w-3xl'>
+          <Outlet />
+        </main>
+      </div>
     </div>
   )
 }

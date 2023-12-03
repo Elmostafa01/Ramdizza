@@ -4,9 +4,8 @@ import Mediaicons from './Mediaicons';
 
 function Home() {
   return (
-    <div 
-    className=" h-screen w-screen bg-glovo 
-    bg-center bg-no-repeat flex flex-col items-center justify-center">
+    <div className=" h-screen w-screen bg-glovo 
+      bg-center bg-no-repeat flex flex-col items-center justify-center">
       <div className='hero relative mb-32 px-8 flex flex-row-reverse items-center justify-center max-w-7xl '>
         <Hero />
       </div>

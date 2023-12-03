@@ -41,26 +41,26 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div>
+    <div className="bg-stone-50 p-20 border rounded-xl gap-5 flex flex-col justify-center items-center'">
       <h2>Ready to order? Let's go!</h2>
 
-      <Form method="POST">
+      <Form method="POST" className="flex flex-col items-start justify-center gap-5">
         <div>
           <label>First Name</label>
           <input type="text" name="customer" required />
         </div>
 
-        <div>
+        <div className="block">
           <label>Phone number</label>
-          <div>
+          <div className="float-right inline-block w-full">
             <input type="tel" name="phone" required />
           </div>
           {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
-        <div>
+        <div className="block">
           <label>Address</label>
-          <div>
+          <div className="float-right inline-block w-full">
             <input type="text" name="address" required />
           </div>
         </div>
@@ -78,7 +78,11 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)}/>
-          <button disabled={isSubmitting}>
+          <button disabled={isSubmitting}
+           className="bg-glovo uppercase font-poppins font-semibold px-4 py-3 text-stone-950
+           inline-block tracking-wide rounded hover:bg-yellow-300 transition-colors duration-300
+           focus:outli-none focus:ring focus:ring-yellow-200 focus:bg-yellow-200 focus:ring-offset-2
+           disabled:cursor-not-allowed">
             {isSubmitting ? 'Placing order...' : 'Order now'}
           </button>
         </div>
@@ -101,9 +105,10 @@ export async function action({request}) {
   if (!isValidPhone(order.phone)) errors.phone = phoneMsg;
   if (Object.keys(errors).length > 0) return errors;
   
-  const newOrder = await createOrder(order);
+  //const newOrder = await createOrder(order);
   
-  return redirect(`/order/${newOrder.id}`);
+ // return redirect(`/order/${newOrder.id}`);
+ return null;
 }
 
 export default CreateOrder;
