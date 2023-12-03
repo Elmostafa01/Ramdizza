@@ -15,6 +15,10 @@ const SearchOrder = () => {
   return (
   <form onSubmit={handleSumbit}>
     <input
+    className="order py-2 px-4 rounded-full sm:w-80 bg-yellow-600
+     placeholder:text-yellow-100 border-2 border-yellow-500
+      focus:outline-none focus:bg-white focus:placeholder:text-slate-400
+    focus:border-yellow-100 transition-colors font-poppins shadow-inset"
         placeholder='Search order #'
         value={query}
         onChange={e=>setQuery(e.target.value)}
