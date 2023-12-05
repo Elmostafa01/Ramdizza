@@ -31,9 +31,9 @@ function Cart() {
   return (
     <div className='bg-stone-50 p-10 border rounded-xl flex flex-col gap-2 justify-center items-center'>
       <Link 
-      to="/menu" 
-      className='text-sm text-slate-700 hover:text-slate-900 hover:bg-slate-200 px-3 py-2 rounded-full 
-      font-poppins font-semibold flex items-center justify-center gap-1'>
+        to="/menu" 
+        className='text-sm text-slate-700 hover:text-slate-900 hover:bg-slate-200 px-3 py-2 rounded-full 
+        font-poppins font-semibold flex items-center justify-center gap-1'>
         <IoMdArrowRoundBack />
         <span>Back to menu</span>
       </Link>

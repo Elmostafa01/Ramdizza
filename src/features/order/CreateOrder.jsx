@@ -1,4 +1,5 @@
 import { Form, redirect, useActionData, useNavigation } from "react-router-dom";
+import Button from "../../UI/Button";
 import {createOrder} from '../../services/apiRestaurant'
 
 // https://uibakery.io/regex-library/phone-number
@@ -41,28 +42,23 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div className="bg-stone-50 p-20 border rounded-xl gap-5 flex flex-col justify-center items-center'">
-      <h2>Ready to order? Let's go!</h2>
-
+    <div className="p-14 bg-stone-50  border rounded-xl gap-5  flex flex-col">
+      <h2 className="font-poppins font-semibold text-yellow-600  text-xl">Ready to order 🍕?</h2>
       <Form method="POST" className="flex flex-col items-start justify-center gap-5">
-        <div>
-          <label>First Name</label>
-          <input type="text" name="customer" required />
+        <div className="w-full">
+          <label className="font-poppins font-s">First Name</label>
+          <input type="text" name="customer" required className="input"/>
         </div>
 
-        <div className="block">
-          <label>Phone number</label>
-          <div className="float-right inline-block w-full">
-            <input type="tel" name="phone" required />
-          </div>
+        <div className="w-full">
+          <label className="font-poppins font-s">Phone number</label>
+            <input type="tel" name="phone" required className="input"/>
           {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
-        <div className="block">
-          <label>Address</label>
-          <div className="float-right inline-block w-full">
-            <input type="text" name="address" required />
-          </div>
+        <div className="w-full">
+          <label className="font-poppins font-s">Address</label>
+          <input type="text" name="address" required className="input"/>
         </div>
 
         <div>
@@ -70,21 +66,26 @@ function CreateOrder() {
             type="checkbox"
             name="priority"
             id="priority"
+            className="h-4 w-4 accent-yellow-400 mr-2 
+            focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
             // value={withPriority}
             // onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority">Want to yo give your order priority?</label>
         </div>
 
-        <div>
+        <div className="mx-auto">
           <input type="hidden" name="cart" value={JSON.stringify(cart)}/>
-          <button disabled={isSubmitting}
-           className="bg-glovo uppercase font-poppins font-semibold px-4 py-3 text-stone-950
-           inline-block tracking-wide rounded hover:bg-yellow-300 transition-colors duration-300
-           focus:outli-none focus:ring focus:ring-yellow-200 focus:bg-yellow-200 focus:ring-offset-2
-           disabled:cursor-not-allowed">
+          <Button 
+          disabled={isSubmitting} 
+          color="bg-glovo" 
+          text="text-stone-950" 
+          hover="hover:bg-yellow-300"
+          radius="rounded"
+          focusBg="focus:bg-yellow-200"
+          >
             {isSubmitting ? 'Placing order...' : 'Order now'}
-          </button>
+          </Button>
         </div>
       </Form>
     </div>
