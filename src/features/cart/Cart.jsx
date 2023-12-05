@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
-import { IoMdArrowRoundBack } from "react-icons/io";
+import { TiArrowLeftThick } from "react-icons/ti";
+import LinkButton from '../../UI/LinkButton';
+import Button from '../../UI/Button';
 
 const fakeCart = [
   {
@@ -30,18 +31,22 @@ function Cart() {
 
   return (
     <div className='bg-stone-50 p-10 border rounded-xl flex flex-col gap-2 justify-center items-center'>
-      <Link 
+      <LinkButton 
         to="/menu" 
-        className='text-sm text-slate-700 hover:text-slate-900 hover:bg-slate-200 px-3 py-2 rounded-full 
-        font-poppins font-semibold flex items-center justify-center gap-1'>
-        <IoMdArrowRoundBack />
+      >
+        <TiArrowLeftThick />
         <span>Back to menu</span>
-      </Link>
-      <h2>Your cart, %NAME%</h2>
-
-      <div>
-        <Link to="/order/new">Order pizzas</Link>
-        <button>Clear cart</button>
+      </LinkButton>
+      <div className='mb-4'>
+        <h2 className='font-poppins text-[1.5rem]'>Your cart, %NAME%</h2>
+      </div>
+      <div className='flex flex-col justify-center items-center gap-4'>
+        <Button to="/order/new" color="bg-glovo" radius="rounded-full" hover="hover:bg-yellow-300">
+          Order pizzas
+        </Button>
+        <Button color="bg-zinc-600" radius="rounded-full" text="text-slate-200" hover="hover:bg-zinc-800">
+          Clear cart
+        </Button>
       </div>
     </div>
   );

@@ -18,12 +18,9 @@
   text-wrap: balance;
 }
 .order::placeholder {
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
-.cart-up {
-  font-family: 'Rubik', sans-serif;
-}
 .cart-down {
   font-family: 'Kdam Thmor Pro', sans-serif;
   opacity: 0;
@@ -33,6 +30,9 @@
 .animation {
   transform: translateY(100%);
   animation: popin 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards ;
+}
+.error {
+  transform: translate(-50%, -50%)
 }
 
 @keyframes popin {
@@ -61,32 +61,19 @@
 }
 
 .spinner {
-  width: 56px;
-  height: 56px;
-  display: grid;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  -webkit-mask: radial-gradient(farthest-side,#0000 40%,#474bff 41%);
-  background: linear-gradient(0deg ,rgba(71,75,255,0.5) 50%,rgba(71,75,255,1) 0) center/4.5px 100%,
-  linear-gradient(90deg,rgba(71,75,255,0.25) 50%,rgba(71,75,255,0.75) 0) center/100% 4.5px;
-  background-repeat: no-repeat;
-  animation: spinner-d3o0rx 1s infinite steps(12);
+  background: conic-gradient(#0000 10%,#ffbf00);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 6.4px),#000 0);
+  animation: spinner-zp9dbg 0.8s infinite linear;
 }
 
-.spinner::before,
-.spinner::after {
-  content: "";
-  grid-area: 1/1;
-  border-radius: 50%;
-  background: inherit;
-  opacity: 0.915;
-  transform: rotate(30deg);
+@keyframes spinner-zp9dbg {
+  to {
+     transform: rotate(1turn);
+  }
 }
-
-.spinner::after {
-  opacity: 0.83;
-  transform: rotate(60deg);
-}
-
 
 @media (max-width: 750px) {
   .left-hero {
@@ -105,41 +92,46 @@
 }
 
   
-  @media (max-width: 420px) {
-    .logo {
-      display: none;
-    }
-    .nologo {
-      display: block;
-      transform: translateY(6px);
-      scale: 0.9;
-      margin-left: 1rem;
-    }
+@media (max-width: 420px) {
+  .logo {
+    display: none;
+  }
+  .nologo {
+    display: block;
+    transform: translateY(6px);
+    scale: 0.9;
+    margin-left: 1rem;
+  }
 
   .left-hero {
-    margin-top: 1rem;
-    height: 12rem;
+  margin-top: 1rem;
+  height: 12rem;
   }
   .right-hero {
-    margin-top: 4rem;
+  margin-top: 4rem;
   }
 
   .instagram, .facebook, .wsp {
-    color: green !important;
+  color: green !important;
   }
   .order {
-    width: 8rem;
-    margin-inline: 20px;
+  width: 8rem;
+  margin-inline: 20px;
   }
   .cart {
-    margin-right: 2rem;
+  margin-right: 2rem;
+  }
+  .order::placeholder {
+    font-size: .8rem;
   }
 }
+
 @media (min-width: 1921px) {
-  .svg {
-    display: none;
-  }
+.svg {
+  display: none;
 }
+}
+
 @media (max-width: 600px) {
   .media .instagram,.facebook,.whatsapp {
     color: white;
