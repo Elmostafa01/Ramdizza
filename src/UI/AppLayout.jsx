@@ -8,11 +8,12 @@ const AppLayout = () => {
   const isLoading = navigation.state === "loading";
 
   return (
-    <div className='flex items-center justify-center h-[100vh]'>
+    <div className='flex flex-col items-center justify-center h-[100vh]'>
+      {/*isLoading && <Loader />*/}
       {isLoading && <Loader />}
       <Header />
-      <div>
-        <main className='max-w-3xl'>
+      <div className=''>
+        <main className='mx-auto '>
           <Outlet />
         </main>
       </div>

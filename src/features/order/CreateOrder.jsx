@@ -42,52 +42,50 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div className="p-14 bg-stone-50  border rounded-xl gap-5  flex flex-col">
-      <h2 className="font-poppins font-semibold text-yellow-600  text-xl">Ready to order 🍕?</h2>
-      <Form method="POST" className="flex flex-col items-start justify-center gap-5">
-        <div className="w-full">
-          <label className="font-poppins font-s">First Name</label>
-          <input type="text" name="customer" required className="input"/>
-        </div>
-
-        <div className="w-full">
-          <label className="font-poppins font-s">Phone number</label>
-            <input type="tel" name="phone" required className="input"/>
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
-        </div>
-
-        <div className="w-full">
-          <label className="font-poppins font-s">Address</label>
-          <input type="text" name="address" required className="input"/>
-        </div>
-
-        <div>
-          <input
-            type="checkbox"
-            name="priority"
-            id="priority"
-            className="h-4 w-4 accent-yellow-400 mr-2 
-            focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
-            // value={withPriority}
-            // onChange={(e) => setWithPriority(e.target.checked)}
-          />
-          <label htmlFor="priority">Want to yo give your order priority?</label>
-        </div>
-
-        <div className="mx-auto">
-          <input type="hidden" name="cart" value={JSON.stringify(cart)}/>
-          <Button 
-          disabled={isSubmitting} 
-          color="bg-glovo" 
-          text="text-stone-950" 
-          hover="hover:bg-yellow-300"
-          radius="rounded"
-          focusBg="focus:bg-yellow-200"
-          >
-            {isSubmitting ? 'Placing order...' : 'Order now'}
-          </Button>
-        </div>
-      </Form>
+    <div className="w-screen h-screen flex place-items-center justify-center">
+      <div className="p-14 bg-stone-50  border rounded-xl gap-5  flex flex-col">
+        <h2 className="font-poppins font-semibold text-yellow-600  text-xl">Ready to order 🍕?</h2>
+        <Form method="POST" className="flex flex-col items-start justify-center gap-5">
+          <div className="w-full">
+            <label className="font-poppins font-s">First Name</label>
+            <input type="text" name="customer" required className="input"/>
+          </div>
+          <div className="w-full">
+            <label className="font-poppins font-s">Phone number</label>
+              <input type="tel" name="phone" required className="input"/>
+            {formErrors?.phone && <p>{formErrors.phone}</p>}
+          </div>
+          <div className="w-full">
+            <label className="font-poppins font-s">Address</label>
+            <input type="text" name="address" required className="input"/>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="priority"
+              id="priority"
+              className="h-4 w-4 accent-yellow-400 mr-2
+              focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
+              // value={withPriority}
+              // onChange={(e) => setWithPriority(e.target.checked)}
+            />
+            <label htmlFor="priority">Want to yo give your order priority?</label>
+          </div>
+          <div className="mx-auto">
+            <input type="hidden" name="cart" value={JSON.stringify(cart)}/>
+            <Button
+            disabled={isSubmitting}
+            color="bg-glovo"
+            text="text-stone-950"
+            hover="hover:bg-yellow-300"
+            radius="rounded"
+            focusBg="focus:bg-yellow-200"
+            >
+              {isSubmitting ? 'Placing order...' : 'Order now'}
+            </Button>
+          </div>
+        </Form>
+      </div>
     </div>
   );
 }

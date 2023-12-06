@@ -6,17 +6,17 @@ const Mediaicons = () => {
   return (
     <>
     <div className="absolute items-center bottom-0 z-50 mb-10 media flex gap-16">
-        <div className="instagram">
+        <div className="instagram hover:scale-110 transition-all">
           <a href="https://www.instagram.com" target='_blank' rel="noreferrer">
             <RiInstagramFill size='1.5em' color='#00A082FF'/>
           </a>
         </div>
-        <div className="facebook">
+        <div className="facebook hover:scale-110 transition-all">
           <a href="#">
             <IoLogoWhatsapp size='1.5em' color='#00A082FF'/>
           </a>
         </div>
-        <div className="wsp">
+        <div className="wsp hover:scale-110 transition-all">
           <a href="#">
             <SiFacebook size='1.4em' color='#00A082FF'/>
           </a>

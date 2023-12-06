@@ -1,4 +1,3 @@
-import pizza from '../images/svgs/pizza.svg'
 import pizzaThree from '../images/pizza-3.png'
 import CreateUser from '../features/user/CreateUser'
 

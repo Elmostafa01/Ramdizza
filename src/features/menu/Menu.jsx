@@ -6,11 +6,15 @@ function Menu() {
   const menu = useLoaderData()
 
   return (
-    <ul>
-      {menu.map((pizza) => (
-        <MenuItem pizza={pizza} key={pizza.id}/>
-      ))}
-    </ul>
+    <div className="w-screen h-screen flex items-center justify-center">
+      <div>
+        <ul>
+          {menu.map((pizza) => (
+            <MenuItem pizza={pizza} key={pizza.id}/>
+          ))}
+        </ul>
+      </div>
+    </div>
   )
 }
 

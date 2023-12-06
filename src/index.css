@@ -10,6 +10,8 @@
   }
 }
 
+
+
 .left-hero {
   transform: rotate(0deg);
   animation: pizza 200s infinite linear;
@@ -34,6 +36,8 @@
 .error {
   transform: translate(-50%, -50%)
 }
+
+
 
 @keyframes popin {
   to {

@@ -15,6 +15,9 @@ export default {
       fontSize: {
         clamp: "clamp(1.7rem,4rem,6vw)",
       },
+      gridTemplateRows: {
+        'auto_1fr_auto': 'auto 1fr auto',
+      },
       backgroundColor: {
         glovo: '#ffc244'
       },
