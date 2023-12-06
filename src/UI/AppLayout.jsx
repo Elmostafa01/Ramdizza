@@ -13,7 +13,7 @@ const AppLayout = () => {
       {isLoading && <Loader />}
       <Header />
       <div className=''>
-        <main className='mx-auto '>
+        <main className='mx-auto'>
           <Outlet />
         </main>
       </div>

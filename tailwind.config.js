@@ -27,7 +27,7 @@ export default {
       },
       boxShadow: {
         'inset': 'inset 0 0 10px rgba(0, 0, 0, 0.1)',
-        'light': '0 0 10px rgba(0, 0, 0, 0.1)'
+        'light': '0 0 10px rgba(220, 240, 110, 0.1)'
       }
     },
   },
