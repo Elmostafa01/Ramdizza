@@ -10,8 +10,6 @@
   }
 }
 
-
-
 .left-hero {
   transform: rotate(0deg);
   animation: pizza 200s infinite linear;
@@ -33,10 +31,57 @@
   transform: translateY(100%);
   animation: popin 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards ;
 }
+.transition {
+  background: #1d1d1d;
+  backdrop-filter: blur(40px);
+  opacity: 1;
+  width: 100vw;
+  height: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  transform-origin: bottom;
+  animation: tran 3s cubic-bezier(0.19,1,0.22,1) forwards;
+}
+.transition-two {
+  background: #00A082FF;
+  backdrop-filter: blur(40px);
+  opacity: 1;
+  width: 100vw;
+  height: 100%;
+  z-index: 499;
+  position: absolute;
+  bottom: 0;
+  transform-origin: left;
+  animation: tran-2 2.5s  cubic-bezier(0.19,1,0.22,1) forwards;
+}
 
 
 
+@keyframes tran {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+  100% {
+    height: 0%;
 
+  }
+}
+@keyframes tran-2 {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+  100% {
+    height: 0%;
+
+  }
+}
 @keyframes popin {
   to {
     transform: translateY(0%);
