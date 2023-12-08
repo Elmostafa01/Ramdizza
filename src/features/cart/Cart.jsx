@@ -43,10 +43,26 @@ function Cart() {
           <h2 className='font-poppins text-[1.5rem]'>Your cart, %NAME%</h2>
         </div>
         <div className='flex flex-col justify-center items-center gap-4'>
-          <Button to="/order/new" color="bg-glovo" radius="rounded-full" hover="hover:bg-yellow-300">
+          <Button 
+          to="/order/new" 
+          color="bg-glovo" 
+          radius="rounded-full" 
+          hover="hover:bg-yellow-300"
+          px="px-9"
+          py="py-3"
+          weight="font-[600]"
+          >
             Order pizzas
           </Button>
-          <Button color="bg-zinc-600" radius="rounded-full" text="text-slate-200" hover="hover:bg-zinc-800">
+          <Button 
+          color="bg-zinc-600" 
+          radius="rounded-full" 
+          text="text-slate-200" 
+          hover="hover:bg-zinc-800"
+          weight="font-600"
+          px="px-12"
+          py="p-3"
+          >
             Clear cart
           </Button>
         </div>

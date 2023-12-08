@@ -26,7 +26,6 @@
   opacity: 0;
   animation: fadeIn 1s linear forwards;
 }
-
 .animation {
   transform: translateY(100%);
   animation: popin 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards ;
@@ -41,7 +40,7 @@
   position: absolute;
   top: 0;
   transform-origin: bottom;
-  animation: tran 3s cubic-bezier(0.19,1,0.22,1) forwards;
+  animation: tran 2.8s cubic-bezier(0.19,1,0.22,1) forwards;
 }
 .transition-two {
   background: #00A082FF;
@@ -104,9 +103,13 @@
 }
 
 .PZ {
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(16deg) brightness(118%) contrast(119%);
+  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(16deg) brightness(158%) contrast(119%);
+  /*filter: invert(-1);*/
 }
-
+.cart:hover{
+  filter: brightness(103%);
+  transition: transform .3s all;
+}
 .spinner {
   width: 40px;
   height: 40px;

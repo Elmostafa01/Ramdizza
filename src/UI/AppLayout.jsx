@@ -10,8 +10,6 @@ const AppLayout = () => {
 
   return (
     <div className='flex flex-col items-center justify-center h-[100vh]'>
-      <div className="transition"></div>
-      <div className="transition-two"></div>
       {isLoading && <Loader />}
       <Header />
       <div className=''>

@@ -78,8 +78,11 @@ function CreateOrder() {
             color="bg-glovo"
             text="text-stone-950"
             hover="hover:bg-yellow-300"
-            radius="rounded"
+            radius="rounded-md"
             focusBg="focus:bg-yellow-200"
+            px="px-4"
+            py="py-2"
+            weight="font-[600]"
             >
               {isSubmitting ? 'Placing order...' : 'Order now'}
             </Button>
