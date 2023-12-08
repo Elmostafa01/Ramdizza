@@ -54,6 +54,13 @@
   transform-origin: left;
   animation: tran-2 2.5s  cubic-bezier(0.19,1,0.22,1) forwards;
 }
+.move {
+  transition: .5s;
+}
+.move:hover {
+  transform: translateX(5px);
+  transition: transform .5s ease;
+}
 
 
 

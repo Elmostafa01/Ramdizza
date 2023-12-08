@@ -78,10 +78,10 @@ function CreateOrder() {
             color="bg-glovo"
             text="text-stone-950"
             hover="hover:bg-yellow-300"
-            radius="rounded-md"
+            radius="rounded-full"
             focusBg="focus:bg-yellow-200"
-            px="px-4"
-            py="py-2"
+            px="px-5"
+            py="py-3"
             weight="font-[600]"
             >
               {isSubmitting ? 'Placing order...' : 'Order now'}

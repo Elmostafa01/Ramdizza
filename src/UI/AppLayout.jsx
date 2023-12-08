@@ -12,7 +12,7 @@ const AppLayout = () => {
     <div className='flex flex-col items-center justify-center h-[100vh]'>
       {isLoading && <Loader />}
       <Header />
-      <div className=''>
+      <div>
         <main className='mx-auto'>
           <Outlet />
         </main>

@@ -1,6 +1,7 @@
 import { TiArrowLeftThick } from "react-icons/ti";
 import LinkButton from '../../UI/LinkButton';
 import Button from '../../UI/Button';
+import CartItem from "./CartItem";
 
 const fakeCart = [
   {
@@ -31,36 +32,45 @@ function Cart() {
 
   return (
     <div className="h-screen w-screen flex items-center justify-center">
-      <div className='bg-stone-50 p-10 h-[400px] w-full max-w-md border rounded-xl flex flex-col gap-8 justify-center items-center'>
+      <div className='relative bg-stone-50 h-[500px] w-full max-w-xl border rounded-xl flex gap-5 flex-col justify-center items-center'>
         <LinkButton
           to="/menu"
           mb="mb-6"
+          position="absolute"
+          top="top-5"
+          left="left-5"
+          text="text-sky-300"
         >
           <TiArrowLeftThick />
           <span>Back to menu</span>
         </LinkButton>
-        <div className='mb-4'>
-          <h2 className='font-poppins text-[1.5rem]'>Your cart, %NAME%</h2>
+        <div className='w-full max-w-md p-5'>
+          <h2 className='mb-6 text-center font-poppins text-[1.5rem]'>
+            Your cart, %NAME%
+          </h2>
+          <ul className="divide-y divide-stone-200 border-b">
+            {cart.map(item => <CartItem item={item} key={item.key} />)}
+          </ul>
         </div>
-        <div className='flex flex-col justify-center items-center gap-4'>
+        <div className='flex justify-center items-center gap-4'>
           <Button 
           to="/order/new" 
           color="bg-glovo" 
           radius="rounded-full" 
           hover="hover:bg-yellow-300"
-          px="px-9"
+          px="px-5"
           py="py-3"
           weight="font-[600]"
           >
             Order pizzas
           </Button>
           <Button 
-          color="bg-zinc-600" 
+          color="border-2" 
           radius="rounded-full" 
-          text="text-slate-200" 
-          hover="hover:bg-zinc-800"
+          text="text-slate-900 font-bold" 
+          hover="hover:bg-zinc-800 hover:text-zinc-100"
           weight="font-600"
-          px="px-12"
+          px="px-7"
           py="p-3"
           >
             Clear cart
