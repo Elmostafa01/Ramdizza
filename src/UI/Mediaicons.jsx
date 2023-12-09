@@ -12,12 +12,12 @@ const Mediaicons = () => {
           </a>
         </div>
         <div className="facebook hover:scale-110 transition-all">
-          <a href="#">
+          <a href="#" target='_blank'> 
             <IoLogoWhatsapp size='1.5em' color='#00A082FF'/>
           </a>
         </div>
         <div className="wsp hover:scale-110 transition-all">
-          <a href="https://www.facebook.com/profile.php?id=61554307084220">
+          <a href="https://www.facebook.com/profile.php?id=61554307084220" target='_blank'>
             <SiFacebook size='1.4em' color='#00A082FF'/>
           </a>
         </div>
