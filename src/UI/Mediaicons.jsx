@@ -17,7 +17,7 @@ const Mediaicons = () => {
           </a>
         </div>
         <div className="wsp hover:scale-110 transition-all">
-          <a href="#">
+          <a href="https://www.facebook.com/profile.php?id=61554307084220">
             <SiFacebook size='1.4em' color='#00A082FF'/>
           </a>
         </div>

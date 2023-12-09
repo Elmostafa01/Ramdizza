@@ -41,25 +41,45 @@ function CreateOrder() {
   // const [withPriority, setWithPriority] = useState(false);
   const cart = fakeCart;
 
+
   return (
     <div className="w-screen h-screen flex place-items-center justify-center">
-      <div className="p-14 bg-stone-50  border rounded-xl gap-5  flex flex-col">
-        <h2 className="font-poppins font-semibold text-yellow-600  text-xl">Ready to order 🍕?</h2>
+      <div className="p-14 bg-stone-50 w-full max-w-2xl border rounded-xl gap-5 flex flex-col">
+        <h2 className="font-poppins font-semibold drop-shadow-sm text-yellow-400 text-2xl text-center mb-8">Start ordering 🍕</h2>
         <Form method="POST" className="flex flex-col items-start justify-center gap-5">
-          <div className="w-full">
-            <label className="font-poppins font-s">First Name</label>
-            <input type="text" name="customer" required className="input"/>
+          <div className="w-full flex flex-col gap-2 sm:flex-row sm:items-center">
+            <label className="sm:basis-40 font-poppins">First Name</label>
+            <input 
+              type="text" 
+              name="customer" 
+              required 
+              className="input grow"
+            />
           </div>
-          <div className="w-full">
-            <label className="font-poppins font-s">Phone number</label>
-              <input type="tel" name="phone" required className="input"/>
-            {formErrors?.phone && <p>{formErrors.phone}</p>}
+          <div className="w-full flex flex-col gap-2 sm:flex-row sm:items-center">
+            <label className="sm:basis-40 font-poppins">Phone number</label>
+            <div className="grow">
+              <input 
+                type="tel" 
+                name="phone" 
+                required 
+                className="input w-full"
+              />
+              {formErrors?.phone && <p className="text-xs font-medium mt-2 bg-red-100 text-red-700 p-2 rounded-md">{formErrors.phone}</p>}
+            </div>
           </div>
-          <div className="w-full">
-            <label className="font-poppins font-s">Address</label>
-            <input type="text" name="address" required className="input"/>
+          <div className="w-full flex flex-col gap-2 sm:flex-row sm:items-center">
+            <label className="sm:basis-40 font-poppins">Address</label>
+            <div className="grow">
+              <input 
+                type="text" 
+                name="address" 
+                required 
+                className="input w-full"
+              />
+            </div>
           </div>
-          <div>
+          <div className="mx-auto my-2 flex items-center gap-5">
             <input
               type="checkbox"
               name="priority"
@@ -69,20 +89,24 @@ function CreateOrder() {
               // value={withPriority}
               // onChange={(e) => setWithPriority(e.target.checked)}
             />
-            <label htmlFor="priority">Want to yo give your order priority?</label>
+            <label htmlFor="priority" className="font-medium">Want to yo give your order priority?</label>
           </div>
           <div className="mx-auto">
-            <input type="hidden" name="cart" value={JSON.stringify(cart)}/>
+            <input 
+              type="hidden" 
+              name="cart" 
+              value={JSON.stringify(cart)}
+            />
             <Button
             disabled={isSubmitting}
-            color="bg-glovo"
-            text="text-stone-950"
+            color="bg-glovo focus-ring transition-all focus:ring-yellow-300 active:scale-105"
+            text=" font-poppins text-stone-950 text-[.8rem]"
             hover="hover:bg-yellow-300"
             radius="rounded-full"
             focusBg="focus:bg-yellow-200"
-            px="px-5"
+            px="px-8"
             py="py-3"
-            weight="font-[600]"
+            weight="font-extrabold"
             >
               {isSubmitting ? 'Placing order...' : 'Order now'}
             </Button>

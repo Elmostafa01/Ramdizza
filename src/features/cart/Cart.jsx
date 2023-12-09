@@ -55,21 +55,21 @@ function Cart() {
         <div className='flex justify-center items-center gap-4'>
           <Button 
           to="/order/new" 
-          color="bg-glovo" 
+          color="bg-glovo active:scale-105" 
           radius="rounded-full" 
           hover="hover:bg-yellow-300"
           px="px-5"
           py="py-3"
-          weight="font-[600]"
+          weight="text-sm font-[600]"
           >
             Order pizzas
           </Button>
           <Button 
-          color="border-2" 
+          color="border-2 focus-ring focus:ring-zinc-100 active:scale-105" 
           radius="rounded-full" 
           text="text-slate-900 font-bold" 
           hover="hover:bg-zinc-800 hover:text-zinc-100"
-          weight="font-600"
+          weight="text-sm font-600"
           px="px-7"
           py="p-3"
           >

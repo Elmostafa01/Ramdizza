@@ -14,14 +14,13 @@ function CartItem({ item }) {
       <div className="flex items-center justify-between sm:gap-6">
         <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
         <Button 
-          color="bg-red-400 hover:bg-red-600"
+          color="bg-red-400 hover:bg-red-600 focus:ring focus:ring-red-200 active:scale-105"
           text="text-slate-50 text-sm"
           px="px-3"
           py="py-1"
           radius="rounded-xl"
           >
           <FaDeleteLeft size="1rem" />
-
         </Button>
       </div>
     </li>

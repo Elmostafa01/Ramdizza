@@ -34,9 +34,9 @@ function CreateUser() {
       {username !== '' && (
         <div className='mt-6 flex justify-center overflow-hidden'>
           <Button 
-          color="bg-zinc-900" 
+          color="bg-zinc-900 focus-ring focus:ring-zinc-100" 
           text="text-slate-100 text-sm font-extrabold" 
-          hover="hover:bg-zinc-700"
+          hover="hover:bg-emerald-700"
           focusBg="hover:bg-zinc-700"
           px="px-6"
           py="py-4"
