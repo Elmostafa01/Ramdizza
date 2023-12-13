@@ -8,7 +8,7 @@ function Menu() {
   const menu = useLoaderData()
   
   return (
-    <div className="menu-page w-screen h-screen flex items-center justify-center">
+    <div className="menu-page w-screen h-screen flex items-center justify-center px-2">
       <div className="w-full my-auto mt-20 max-w-xl">
         <ul className="flex flex-col gap-1 py-5">
           <h1 className="menu pointer-events-none flex items-center justify-start gap-2 px-2 py-2 mt-10 text-[.7rem] text-zinc-700">

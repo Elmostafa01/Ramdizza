@@ -22,7 +22,7 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="order-comp space-y-8 p-14 bg-stone-50 w-full max-w-2xl border rounded-xl">
+    <div className="order-comp space-y-8 p-14 bg-stone-50 w-full max-w-2xl border rounded-xl px-2">
       <div className="flex items-center flex-wrap justify-between gap-8">
         <h2 className="inline-flex gap-2 text-[1em] font-semibold ">
           <span className="text-stone-200 bg-stone-400 ring-4 ring-zinc-500 px-2 uppercase rounded-full">Order: #{id}</span>

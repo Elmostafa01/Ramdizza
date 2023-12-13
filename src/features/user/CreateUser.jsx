@@ -1,13 +1,21 @@
 import { useState } from 'react';
 import Button from '../../UI/Button';
 import pizza from '../../images/svgs/pizza.svg'
-
+import { useDispatch } from 'react-redux';
+import { updateName } from './userSlice';
+import { useNavigate } from 'react-router-dom';
 
 function CreateUser() {
   const [username, setUsername] = useState('');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if(!username) return;
+    dispatch(updateName(username));
+    navigate('menu')
   }
 
   return (
@@ -19,14 +27,14 @@ function CreateUser() {
         <div className='hero-input sm:w-96 relative block h-12'>
           <input
             className='w-full h-full rounded-lg pl-16 focus:outline-none
-            focus:ring focus:border-emerald-400  overflow-hidden'
+            focus:ring focus:ring-yellow-500 overflow-hidden'
             type="text"
-            placeholder="Your full name"
+            placeholder="Enter your Name"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
           <div className='z-50 absolute bg-emerald-600 p-3 left-0 top-0 rounded-l-lg pointer-events-none'>
-            <img src={pizza} className='h-6'/>
+            <img src={pizza} className='h-6' alt='pizza-icon'/>
           </div>
       </div>
     </div>
@@ -41,7 +49,7 @@ function CreateUser() {
           px="px-6"
           py="py-4"
           radius="rounded-full"
-          animation="animation"
+          animation="animation"        
           >
             Start ordering
           </Button>

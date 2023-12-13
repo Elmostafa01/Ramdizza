@@ -62,7 +62,9 @@
   transition: transform .5s ease;
 }
 
-
+.zoom {
+  animation: zoom 2s cubic-bezier(0.68,-0.55,0.27,1.55);
+}
 
 @keyframes tran {
   0% {
@@ -87,6 +89,15 @@
     height: 0%;
 
   }
+}
+@keyframes zoom {
+from {
+  opacity: 0;
+  scale: 1.2;
+} to {
+  scale: 1;
+  opacity: 1;
+}
 }
 @keyframes popin {
   to {
@@ -128,7 +139,7 @@
   background: #fafafa;
 }
 ::-webkit-scrollbar-button {
-  background: #fafafa;
+  display: none;
 }
 ::-webkit-scrollbar-thumb {
   background: #2ABB98FF;
@@ -141,6 +152,7 @@
   background: conic-gradient(#0000 10%,#ffbf00);
   -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 6.4px),#000 0);
   animation: spinner-zp9dbg 0.8s infinite linear;
+  z-index: 800;
 }
 
 @keyframes spinner-zp9dbg {
@@ -193,7 +205,7 @@
   margin-inline: 20px;
   }
   .cart {
-  margin-right: 2rem;
+  margin-right: 3rem;
   }
   .order::placeholder {
     font-size: .8rem;

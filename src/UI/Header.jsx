@@ -3,9 +3,13 @@ import SearchOrder from '../features/order/SearchOrder';
 import logo from '../images/logo-g.png'
 import nologo from '../images/nologo.png'
 import CartOverview from '../features/cart/CartOverview'
+import { useSelector } from 'react-redux'
+
 
 
 const Header = () => {
+  const username = useSelector((state) => state.user.username);
+
   return (
     <header className='header bg-[#ffc244] fixed top-0 left-0 right-0 flex items-center
      justify-around px-4 py h-24 w-full z-40'>
@@ -17,7 +21,8 @@ const Header = () => {
       </div>
       <SearchOrder />
       <div className='cart'>
-        <CartOverview />
+        {username && <CartOverview /> 
+      } 
       </div>
     </header>
   )

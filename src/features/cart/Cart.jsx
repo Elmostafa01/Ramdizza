@@ -2,6 +2,9 @@ import { TiArrowLeftThick } from "react-icons/ti";
 import LinkButton from '../../UI/LinkButton';
 import Button from '../../UI/Button';
 import CartItem from "./CartItem";
+import { useSelector } from "react-redux";
+import { BiSolidCart } from "react-icons/bi";
+
 
 const fakeCart = [
   {
@@ -29,9 +32,10 @@ const fakeCart = [
 
 function Cart() {
   const cart = fakeCart;
+  const username = useSelector((state) => state.user.username);
 
   return (
-    <div className="h-screen w-screen flex items-center justify-center">
+    <div className="h-screen w-screen flex items-center justify-center px-2">
       <div className='relative bg-stone-50 h-[500px] w-full max-w-xl border rounded-xl flex gap-5 flex-col justify-center items-center'>
         <LinkButton
           to="/menu"
@@ -45,8 +49,10 @@ function Cart() {
           <span>Back to menu</span>
         </LinkButton>
         <div className='w-full max-w-md p-5'>
-          <h2 className='mb-6 text-center font-poppins text-[1.5rem]'>
-            Your cart, %NAME%
+          <h2 className='flex justify-center items-center text-zinc-950 mb-6 text-center font-poppins text-[1.3rem]'> 
+            <span><BiSolidCart /></span>
+            <span className="uppercase font-bold px-2 rounded-3xl">your Cart</span>
+            <span className="uppercase font-bold py-1 px-4 rounded-3xl">{username}</span>
           </h2>
           <ul className="divide-y divide-stone-200 border-b">
             {cart.map(item => <CartItem item={item} key={item.key} />)}
