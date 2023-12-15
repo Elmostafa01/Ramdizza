@@ -9,6 +9,9 @@
     md:px-6 md:py-3
   }
 }
+:root {
+  --iphone6-7-8: 380px;
+}
 
 .left-hero {
   transform: rotate(0deg);
@@ -145,6 +148,20 @@ from {
   background: #2ABB98FF;
   border-radius: 20px;
 }
+.your__cart::-webkit-scrollbar {
+  width: 5px;
+}
+.your__cart::-webkit-scrollbar-track {
+  background: #fafafa;
+}
+.your__cart::-webkit-scrollbar-button {
+  display: none;
+}
+.your__cart::-webkit-scrollbar-thumb {
+  background: rgb(226, 226, 226);
+  border-radius: 20px;
+}
+
 .spinner {
   width: 40px;
   height: 40px;
@@ -210,10 +227,16 @@ from {
   .order::placeholder {
     font-size: .8rem;
   }
-  /*.order-comp {
-    margin-top: 8rem;
-    font-size: .9rem;
-  }*/
+  .cart__layout {
+    height: 550px;
+    gap: 0;
+  }
+}
+@media (max-width: 380px) {
+  .cart__layout {
+    margin-top: 5rem;
+    height: 500px;
+  }
 }
 
 @media (min-width: 1921px) {

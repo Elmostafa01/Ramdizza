@@ -39,7 +39,8 @@ function MenuItem({ pizza }) {
           <p className="text-[.7rem] uppercase px-4 py-1 bg-red-100 inline-block rounded-full font-poppins">
             Sold out
           </p>}
-          {!soldOut && <Button 
+          {!soldOut && 
+          <Button 
             onClick={handleAddToCart}
             color="bg-glovo"
             focusBg="focus:ring focus:ring-yellow-200"
@@ -51,7 +52,8 @@ function MenuItem({ pizza }) {
             py="py-[.5rem]"
           >
             Add to cart
-          </Button>}
+          </Button>
+          }
         </div>
       </div>
     </li>

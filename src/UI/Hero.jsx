@@ -20,10 +20,10 @@ const Hero = () => {
     <CreateUser /> : 
     <Button 
     to="/menu"
-    color="flex items-center gap-2 bg-zinc-900 focus-ring focus:ring-zinc-100 font-extrabold" 
+    color="flex items-center gap-2 bg-zinc-900 font-extrabold hover:bg-zinc-700" 
     text="text-slate-100 text-sm" 
     hover="hover:bg-emerald-700"
-    focusBg="hover:bg-zinc-700"
+    focusBg="focus-ring focus:ring-yellow-600"
     radius="rounded-full"
     px="px-6"
     py="py-4"

@@ -12,10 +12,12 @@ function CreateUser() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
-    if(!username) return;
-    dispatch(updateName(username));
-    navigate('menu')
+  
+    if (!username) return;
+    if (username.trim().length >= 3 && !/^\d+$/.test(username)) {
+      dispatch(updateName(username));
+      navigate('menu');
+    }
   }
 
   return (
