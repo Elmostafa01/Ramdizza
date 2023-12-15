@@ -15,7 +15,7 @@ function CartOverview() {
       <Link to="/cart" className="cart">
         <div className=" transition-all flex flex-col justify-center items-center
          bg-emerald-600 rounded-xl mx-4 w-28 text-sm overflow-hidden border-2 border-yellow-500">
-          <div className="cart-up inline-flex items-center justify-center  w-28 py-1 text-center">
+          <div className="cart-down inline-flex items-center justify-center  w-28 py-1 text-center">
             <Username />
           </div>
           <div className="cart-down py-1 flex items-center justify-center gap-1 bg-emerald-500 w-28 text-center">

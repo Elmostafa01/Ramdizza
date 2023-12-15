@@ -1,10 +1,11 @@
-import Button from "../../UI/Button";
+import { useDispatch } from "react-redux";
 import { formatCurrency } from "../../utilities/helpers";
-import { FaDeleteLeft } from "react-icons/fa6";
+import DeleteItems from "./DeleteItems";
 
 
 function CartItem({ item }) {
   const { pizzaId, name, quantity, totalPrice } = item;
+  const dispatch = useDispatch();
 
   return (
     <li className="py-3 sm:flex items-center sm:justify-between">
@@ -13,16 +14,7 @@ function CartItem({ item }) {
       </p>
       <div className="flex items-center justify-between sm:gap-6">
         <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
-        <Button 
-          color="bg-red-400 hover:bg-red-600 active:scale-105"
-          focusBg="focus:ring focus:ring-red-200"
-          text="text-slate-50 text-sm"
-          px="px-3"
-          py="py-1"
-          radius="rounded-xl"
-          >
-          <FaDeleteLeft size="1rem" />
-        </Button>
+          <DeleteItems pizzaId={pizzaId} />
       </div>
     </li>
     
@@ -30,3 +22,14 @@ function CartItem({ item }) {
 }
 
 export default CartItem;
+
+{/* <Button 
+color="bg-yellow-400 hover:bg-yellow-500 active:scale-105"
+focusBg="focus:ring focus:ring-red-200"
+text="text-slate-50 text-sm"
+px="px-3"
+py="py-1"
+radius="rounded-xl"
+>
+<FaDeleteLeft size="1rem" color="red"/>
+</Button> */}

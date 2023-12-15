@@ -2,39 +2,19 @@ import { TiArrowLeftThick } from "react-icons/ti";
 import LinkButton from '../../UI/LinkButton';
 import Button from '../../UI/Button';
 import CartItem from "./CartItem";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BiSolidCart } from "react-icons/bi";
-import { getCart } from "./cartSlice";
+import { clearCart, getCart } from "./cartSlice";
 import { getUsername } from "../user/userSlice";
+import EmptyCart from "./EmptyCart";
 
-
-const fakeCart = [
-  {
-    pizzaId: 12,
-    name: 'Mediterranean',
-    quantity: 2,
-    unitPrice: 16,
-    totalPrice: 32,
-  },
-  {
-    pizzaId: 6,
-    name: 'Vegetale',
-    quantity: 1,
-    unitPrice: 13,
-    totalPrice: 13,
-  },
-  {
-    pizzaId: 11,
-    name: 'Spinach and Mushroom',
-    quantity: 1,
-    unitPrice: 15,
-    totalPrice: 15,
-  },
-];
 
 function Cart() {
   const username = useSelector(getUsername);
   const cart = useSelector(getCart);
+  const dispatch = useDispatch();
+
+  if(!cart.length) return <EmptyCart />
 
   return (
     <div className="h-screen w-screen flex items-center justify-center px-2">
@@ -52,13 +32,13 @@ function Cart() {
         </LinkButton>
         <div className='w-full max-w-md p-5 mt-12'>
           <h2 className='flex justify-center items-center text-zinc-950 mb-6 text-center font-poppins text-[1.3rem]'> 
-            <span><BiSolidCart /></span>
+            <span className="mb-1 mr-2"><BiSolidCart size="1.2em"/></span>
             <span className="uppercase font-bold px-2 rounded-3xl">your Cart</span>
             <span className="uppercase font-bold py-1 px-4 rounded-3xl">{username}</span>
           </h2>
           <div className="your__cart px-4 w-full h-[17rem] max-w-md overflow-scroll">
             <ul className="divide-y divide-stone-200 border-b">
-              {cart.map(item => <CartItem item={item} key={item.key} />)}
+              {cart.map(item => <CartItem item={item} key={item.id} />)}
             </ul>
           </div>
         </div>
@@ -75,6 +55,7 @@ function Cart() {
             Order pizzas
           </Button>
           <Button 
+          onClick={() => dispatch(clearCart())}
           color="border-2 focus-ring focus:ring-zinc-100 active:scale-105" 
           radius="rounded-full" 
           text="text-slate-900 font-bold" 
