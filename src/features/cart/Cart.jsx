@@ -18,7 +18,7 @@ function Cart() {
 
   return (
     <div className="h-screen w-screen flex items-center justify-center px-2">
-      <div className='cart__layout relative bg-stone-50 h-[600px] w-full max-w-xl border rounded-xl flex gap-4 flex-col justify-center items-center'>
+      <div className='cart__layout relative bg-stone-50 h-[600px] w-full max-w-2xl border rounded-xl flex gap-4 flex-col justify-center items-center'>
         <LinkButton
           to="/menu"
           mb="mb-6"
@@ -30,15 +30,15 @@ function Cart() {
           <TiArrowLeftThick />
           <span>Back to menu</span>
         </LinkButton>
-        <div className='w-full max-w-md p-5 mt-12'>
+        <div className='w-full max-w-xl p-5 mt-12'>
           <h2 className='flex justify-center items-center text-zinc-950 mb-6 text-center font-poppins text-[1.3rem]'> 
             <span className="mb-1 mr-2"><BiSolidCart size="1.2em"/></span>
             <span className="uppercase font-bold px-2 rounded-3xl">your Cart</span>
             <span className="uppercase font-bold py-1 px-4 rounded-3xl">{username}</span>
           </h2>
-          <div className="your__cart px-4 w-full h-[17rem] max-w-md overflow-scroll">
+          <div className="your__cart px-4 w-full h-[17rem] max-w-xl overflow-scroll">
             <ul className="divide-y divide-stone-200 border-b">
-              {cart.map(item => <CartItem item={item} key={item.id} />)}
+              {cart.map(item => <CartItem item={item} key={item.pizzaId} />)}
             </ul>
           </div>
         </div>

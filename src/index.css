@@ -139,7 +139,7 @@ from {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #fafafa;
+  background: #ebebeb;
 }
 ::-webkit-scrollbar-button {
   display: none;
@@ -148,6 +148,7 @@ from {
   background: #2ABB98FF;
   border-radius: 20px;
 }
+
 .your__cart::-webkit-scrollbar {
   width: 5px;
 }

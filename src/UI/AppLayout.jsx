@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import Header from './Header';
 import { Outlet, useNavigation } from 'react-router-dom';
 import Loader from './Loader';
