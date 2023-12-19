@@ -22,7 +22,7 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="order-comp space-y-8 p-14 bg-stone-50 w-full max-w-2xl border rounded-xl px-2">
+    <div className="order-comp space-y-8 p-14 bg-stone-50 w-full max-w-2xl border rounded-xl sm:px-16">
       <div className="flex items-center flex-wrap justify-between gap-8">
         <h2 className="inline-flex gap-2 text-[1em] font-semibold ">
           <span className="text-stone-200 bg-stone-400 ring-4 ring-zinc-500 px-2 uppercase rounded-full">Order: #{id}</span>
@@ -31,8 +31,8 @@ function Order() {
           {priority && 
           <div 
             className="inline-flex">
-            <span className="flex items-center gap-1 bg-yellow-100 ring-1 ring-yellow-600 rounded-full py-1 px-2  text-sm uppercase 
-            font-semibold text-yellow-600 tracking-wide truncate">
+            <span className="flex items-center gap-1 bg-red-200 ring-1 ring-red-600 rounded-full py-1 px-2  text-sm uppercase 
+            font-semibold text-red-800 tracking-wide truncate">
               <TbArrowBigUpLines /> Priority
             </span>
           </div>}
@@ -44,7 +44,6 @@ function Order() {
           </div>
         </div>
       </div>
-
       <div className="flex items-center flex-wrap justify-between gap-8 bg-stone-100 rounded-2xl p-5">
         <p className="font-medium">
           {deliveryIn >= 0
@@ -55,7 +54,7 @@ function Order() {
       </div>
 
       <ul className="pizzas divide-y dive-stone-100 border-b border-t">
-        {cart.map(item => <OrderItem item={item} key={item.id} />)}
+        {cart.map(item => <OrderItem item={item} key={item.pizzaId} />)}
       </ul>
 
       <div className="space-y-2 px-6 py-5 bg-stone-100 rounded-2xl">

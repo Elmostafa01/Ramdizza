@@ -122,7 +122,14 @@ from {
     transform: rotate(1turn);
   }
 }
-
+.position-btn {
+  top: 12px;
+  font-size: 15px;
+  right: 4px;
+  bottom: 0;
+  height: 38px;
+  border-radius: 30px; padding: 0 10px;
+}
 .PZ {
   filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(16deg) brightness(158%) contrast(119%);
   /*filter: invert(-1);*/
@@ -193,10 +200,27 @@ from {
   .left-hero {
     margin-top: 3rem;
   }
+  .position-btn {
+    top: 12px;
+    font-size: 13px;
+    right: 4px;
+    bottom: 0;
+    height: 30px;
+    border-radius: 30px; padding: 0 10px;
+  }
 }
 
-  
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+  .position-btn {
+    top: 44px;
+    font-size: 13px;
+    right: 4px;
+    bottom: 0;
+    height: 30px;
+    border-radius: 30px; padding: 0 10px;
+  }
+}  
+@media (max-width: 420px ) {
   .logo {
     display: none;
   }

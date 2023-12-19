@@ -13,7 +13,7 @@ function UpdateItemQuantity({pizzaId, currentQuantity}) {
             focusBg="focus:ring focus:ring-yellow-200"
             radius="rounded-full" 
             hover="hover:bg-yellow-300" 
-            text="md:px-3.5 md:py-2 text-sm"
+            text="md:px-4 md:py-2 text-sm"
             weight="font-[900]"
             px="px-[.9rem]"
             py="py-[.5rem]"
@@ -29,7 +29,7 @@ function UpdateItemQuantity({pizzaId, currentQuantity}) {
             hover="hover:bg-yellow-300" 
             text="md:px-3.5 md:py-2 text-sm"
             weight="font-[900]"
-            px="px-[.8rem]"
+            px="px-[.9rem]"
             py="py-[.5rem]"
         >
         +

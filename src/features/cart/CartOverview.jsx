@@ -8,7 +8,7 @@ function CartOverview() {
   const totalCartQuantity = useSelector(getTotalQuantity);
   const totalCartPrice = useSelector(getTotalPrice);
 
-  if(!totalCartQuantity) return null;
+  //if(!totalCartQuantity) return null;
 
   return (
     <div>
