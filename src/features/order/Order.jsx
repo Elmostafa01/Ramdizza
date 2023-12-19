@@ -1,14 +1,21 @@
 // Test ID: IIDSAT
-import { useLoaderData } from "react-router-dom";
+import { useFetcher, useLoaderData } from "react-router-dom";
 import { getOrder } from "../../services/apiRestaurant";
 import { calcMinutesLeft,formatCurrency,formatDate } from "../../utilities/helpers";
 import OrderItem from '../order/OrderItem';
 import { TbArrowBigUpLines } from "react-icons/tb";
 import { TbToolsKitchen3 } from "react-icons/tb";
+import { useEffect } from "react";
 
 
 function Order() {
   const order = useLoaderData();
+
+  const fetcher = useFetcher();
+
+  useEffect(() => {
+    if (!fetcher.data && fetcher.state === 'idle') fetcher.load('/menu');
+  },[fetcher]);
   
   const {
     id,
@@ -22,10 +29,13 @@ function Order() {
   const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
   return (
-    <div className="order-comp space-y-8 p-14 bg-stone-50 w-full max-w-2xl border rounded-xl sm:px-16">
+    <div className="order-comp mt-24 space-y-8 p-14 bg-stone-50 w-full max-w-2xl border rounded-xl sm:px-16">
       <div className="flex items-center flex-wrap justify-between gap-8">
         <h2 className="inline-flex gap-2 text-[1em] font-semibold ">
-          <span className="text-stone-200 bg-stone-400 ring-4 ring-zinc-500 px-2 uppercase rounded-full">Order: #{id}</span>
+          <span className="text-stone-200 bg-stone-400 ring-4 ring-zinc-500 px-2 uppercase rounded-full">
+            Order: 
+            <span className="text-black">#{id}</span>
+          </span>
         </h2>
         <div className="space-x-2 flex">
           {priority && 
@@ -54,7 +64,14 @@ function Order() {
       </div>
 
       <ul className="pizzas divide-y dive-stone-100 border-b border-t">
-        {cart.map(item => <OrderItem item={item} key={item.pizzaId} />)}
+        {cart.map(item => 
+        <OrderItem 
+          item={item} 
+          key={item.pizzaId} 
+          isLoadingIngredients={fetcher.state === 'loading'}// if this doesnt exist
+          ingredients={fetcher?.data?.find((element) =>//return an empty array
+             element.id === item.pizzaId)?.ingredients ?? []} 
+        />)}
       </ul>
 
       <div className="space-y-2 px-6 py-5 bg-stone-100 rounded-2xl">

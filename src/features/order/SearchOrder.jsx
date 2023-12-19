@@ -19,7 +19,7 @@ const SearchOrder = () => {
      placeholder:text-yellow-100 border-2 border-yellow-500
       focus:outline-none focus:bg-white focus:placeholder:text-slate-400
     focus:border-yellow-100 transition-colors font-poppins shadow-inset"
-        placeholder='Search order #'
+        placeholder='Search order'
         value={query}
         onChange={e=>setQuery(e.target.value)}
     />
