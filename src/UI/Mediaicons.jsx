@@ -7,7 +7,7 @@ const Mediaicons = () => {
     <>
     <div className="absolute items-center bottom-0 z-50 mb-10 media flex gap-16">
         <div className="instagram hover:scale-110 transition-all">
-          <a href="https://www.instagram.com" target='_blank' rel="noreferrer">
+          <a href="https://www.instagram.com/Ramdizza_Pizza" target='_blank' rel="noreferrer">
             <RiInstagramFill size='1.5em' color='#00A082FF'/>
           </a>
         </div>
