@@ -1,5 +1,6 @@
 {
-  "homepage": "https://elmostafa01.github.io/",
+  "homepage": "https://elmostafa01.github.io/ramdizza",
+  "private":"false",
   "name": "ramdizza",
   "version": "0.0.0",
   "type": "module",
