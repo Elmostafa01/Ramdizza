@@ -1,6 +1,7 @@
 {
   "homepage": "http://elmostafa01.github.io/Ramdizza",
   "name": "ramdizza-food",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
