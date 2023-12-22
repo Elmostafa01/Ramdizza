@@ -1,14 +1,11 @@
 {
-  "homepage": "https://elmostafa01.github.io/",
   "private":"false",
   "name": "ramdizza",
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",   
+  "scripts": { 
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
